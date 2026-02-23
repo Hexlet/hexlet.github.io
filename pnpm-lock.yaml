@@ -46,8 +46,8 @@ importers:
         specifier: 3.9.2
         version: 3.9.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       npm-check-updates:
-        specifier: ^19.4.0
-        version: 19.4.0
+        specifier: ^19.4.1
+        version: 19.4.1
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -4251,8 +4251,8 @@ packages:
   not@0.1.0:
     resolution: {integrity: sha512-5PDmaAsVfnWUgTUbJ3ERwn7u79Z0dYxN9ErxCpVJJqe2RK0PJ3z+iFUxuqjwtlDDegXvtWoxD/3Fzxox7tFGWA==}
 
-  npm-check-updates@19.4.0:
-    resolution: {integrity: sha512-ZEyGbO/jQOGs/7OW0hOwyFnBG0XWO8ciSCRZEyshCxi3/ZrPtCY2laZq4MFO+UIM6oJrKXTE33jZaht9WuvXRw==}
+  npm-check-updates@19.4.1:
+    resolution: {integrity: sha512-g3s+khrneBo0iGx7xqu/cQUk0Qc1XAHEYDptPCyCFF447RdhiBd6yPRxB7GkesbUBHXeNfmqV3ArlwxcI8h56w==}
     engines: {node: '>=20.0.0', npm: '>=8.12.1'}
     hasBin: true
 
@@ -11847,7 +11847,7 @@ snapshots:
 
   not@0.1.0: {}
 
-  npm-check-updates@19.4.0: {}
+  npm-check-updates@19.4.1: {}
 
   npm-run-path@4.0.1:
     dependencies:
