@@ -25,7 +25,7 @@
     "clsx": "^2.1.1",
     "docusaurus-plugin-mcp-server": "^1.0.0",
     "flexsearch": "0.8.212",
-    "hono": "^4.12.27",
+    "hono": "^4.12.30",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
