@@ -53,6 +53,22 @@ const config: Config = {
             from: '/learning-formats/bazovyi-plan',
             to: '/formats-and-tarifs/tarifs/bazovyi-plan',
           },
+          {
+            from: '/learning-formats/tarif-premialnyi',
+            to: '/formats-and-tarifs/tarifs/tarif-premialnyi',
+          },
+          {
+            from: '/learning-formats/tarif-optimalnyi',
+            to: '/formats-and-tarifs/tarifs/tarif-optimalnyi',
+          },
+          {
+            from: '/learning-formats/tarif-rasshirennyi',
+            to: '/formats-and-tarifs/tarifs/tarif-rasshirennyi',
+          },
+          {
+            from: '/learning-formats/tarif-standartnyi',
+            to: '/formats-and-tarifs/tarifs/tarif-standartnyi',
+          },
         ],
       },
     ],
