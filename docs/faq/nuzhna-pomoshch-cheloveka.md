@@ -39,5 +39,5 @@ title: "Нужна помощь человека"
 
 **Контакты службы поддержки:**
 
-- почта <support@hexlet.io>
+- почта support@hexlet.io
 - телеграм @hexlet_help_bot

@@ -33,32 +33,32 @@ title: "Практика в коммерческих проектах"
 1. **Маркетинговый аналитик Telegram-каналов**
 
    Разрабатываем платформу для полной аналитики Telegram-каналов и автоматизации маркетинга.
-   Backlog проекта: <https://github.com/Hexlet/tg-marketing-service/issues>
+   Backlog проекта: https://github.com/Hexlet/tg-marketing-service/issues
 
 2. **Hexlet.CV**
 
    Онлайн-сервис для создания и публикации резюме, ориентированный на разработчиков, аналитиков, тестировщиков и специалистов смежных профессий.
-   Backlog проекта: <https://github.com/Hexlet/hexlet-cv/issues>
+   Backlog проекта: https://github.com/Hexlet/hexlet-cv/issues
 
 3. **Runit**
 
    Онлайн-песочница для запуска кода прямо в браузере. Сервис позволяет писать, запускать и тестировать код на разных языках без необходимости установки локального окружения.
-   Backlog проекта: <https://github.com/hexlet-rus/runit/issues>
+   Backlog проекта: https://github.com/hexlet-rus/runit/issues
 
 4. **Аналитика вакансий**
 
    Сервис, который автоматически собирает вакансии с ключевых платформ (hh.ru, SuperJob, Habr Career, Telegram-каналы) и строит аналитику по IT-рынку труда.
-   Backlog проекта: <https://github.com/Hexlet/hexlet-vacancy-analysis>
+   Backlog проекта: https://github.com/Hexlet/hexlet-vacancy-analysis
 
 5. **Hexlet SICP**
 
    Онлайн-версия классического курса Structure and Interpretation of Computer Programs (SICP), адаптированная для интерактивного обучения.
-   Backlog проекта: <https://github.com/Hexlet/hexlet-sicp/issues>
+   Backlog проекта: https://github.com/Hexlet/hexlet-sicp/issues
 
 6. **Автопостинг**
 
    Сервис для автоматизации публикаций в социальных сетях. Он помогает планировать, создавать и размещать контент сразу в нескольких соцсетях через единый интерфейс.
-   Backlog проекта: <https://github.com/Hexlet/hexlet-autoposting/tree/main>
+   Backlog проекта: https://github.com/Hexlet/hexlet-autoposting/tree/main
 
 ## Что нужно знать, чтобы начать
 
@@ -79,7 +79,7 @@ title: "Практика в коммерческих проектах"
 ## Как выбирать задачи
 
 **Актуальный список задач** проекта находится во вкладке Issues в репозитории.
-Например, вот раздел задач проекта Hexlet.CV: <https://github.com/Hexlet/hexlet-cv/issues>
+Например, вот раздел задач проекта Hexlet.CV: https://github.com/Hexlet/hexlet-cv/issues
 
 Issue помечаются лейблами, которые обозначают стек, направление или сложность задачи. Например, улучшение интерфейса, баг, ошибка в тексте.
 

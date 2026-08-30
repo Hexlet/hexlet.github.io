@@ -16,4 +16,4 @@ title: "Хочу попасть в Хекслет Колледж"
 
 ## Телефон: 8 (800) 222-75-46
 
-## Email: <support@hexly.ru>
+## Email: support@hexly.ru
