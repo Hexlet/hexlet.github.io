@@ -11,7 +11,7 @@ title: "Сертификат"
 ## Условия получения
 
 - Вы обучаетесь на тарифе «[Оптимальный](/docs/formats-and-tarifs/tarifs/tarif-optimalnyi.md)», «[Стандартный](/docs/formats-and-tarifs/tarifs/tarif-standartnyi.md)», «[Расширенный](/docs/formats-and-tarifs/tarifs/tarif-rasshirennyi.md)» или «[Премиальный](/docs/formats-and-tarifs/tarifs/tarif-premialnyi.md)»
-- Вы завершили обучение по программе: прошли 80% уроков и все проекты в ней
+- Вы завершили обучение по программе: выполнили все проекты в ней
 - Все проекты проверил и принял наставник
 
 ## Где найти
