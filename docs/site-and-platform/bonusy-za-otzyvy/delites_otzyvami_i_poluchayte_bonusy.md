@@ -48,7 +48,7 @@ title: "Делитесь отзывами и получайте бонусы"
 
 После того, как ваш текстовый отзыв прошел модерацию, вам необходимо отправить ссылку на отзыв или скриншот поддержке support@hexlet.io, поддержка проверит отзыв и отправит промокод с днями доступа.
 
-Инструкцию по видеоотзыву можно найти в этой статье https://help.hexlet.io/site-and-platform/bonusy-za-otzyvy/kak-zapisat-videootzyv/
+Инструкцию по видеоотзыву можно найти в этой статье /docs/site-and-platform/bonusy-za-otzyvy/kak-zapisat-videootzyv.md
 
 Полученный промокод применяется в этой форме https://ru.hexlet.io/account/promo_codes/new
 
