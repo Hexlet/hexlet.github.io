@@ -42,7 +42,35 @@ OpenCode даёт набор бесплатных моделей. Для них 
 opencode auth login opencode
 ```
 
-Выберите вход через браузер. OpenCode напечатает код вида `XXXX-XXXX` и адрес `https://opencode.ai/console/device`. Откройте адрес, введите код и войдите через Google или GitHub. После подтверждения команда завершится сама. Внутри OpenCode то же самое делает команда `/connect`.
+OpenCode спросит способ входа:
+
+```text
+┌  Connect an integration
+│
+◆  Select login method
+│  ● OpenCode Console account
+│  ○ API key (service account)
+└
+```
+
+Выберите **OpenCode Console account**, это вход через браузер. Второй пункт нужен для ключа сервисного аккаунта, в терминале он не используется. OpenCode напечатает код и адрес:
+
+```text
+┌  Connect an integration
+│
+◇  Select login method
+│  OpenCode Console account
+│
+◇  Authorization started
+│
+●  Enter code: CDDW-LVGK
+│
+●  https://opencode.ai/console/device?user_code=CDDW-LVGK&client_id=opencode-cli
+│
+◐  Waiting for authorization.
+```
+
+Откройте адрес в браузере, проверьте код и войдите через Google или GitHub. После подтверждения команда завершится сама. Внутри OpenCode то же самое делает команда `/connect`.
 
 ![Страница входа в OpenCode Console: кнопки Continue with Google, Continue with GitHub и Continue with email](/img/docs/img-208--opencode-console-login.png)
 
@@ -50,6 +78,12 @@ opencode auth login opencode
 
 ```bash
 opencode auth list
+```
+
+В выводе стоит интеграция, имя пространства и статус `stored`:
+
+```text
+OpenCode Console  Default             stored
 ```
 
 Оплата и расход живут в кабинете [opencode.ai/console](https://opencode.ai/console). Ключ другого провайдера, например OpenAI или Anthropic, подключается той же командой `/connect`.
@@ -96,7 +130,11 @@ opencode auth list
 
 2. В терминале выполните `opencode auth login opencode` и войдите через браузер с той же почтой.
 
-3. Проверьте подключение командой `opencode auth list`: в выводе должна быть строка с **Hexlet Students**.
+3. Проверьте подключение командой `opencode auth list`. В выводе должна быть строка с **Hexlet Students**:
+
+   ```text
+   OpenCode Console  Hexlet Students             stored
+   ```
 
 4. Запустите OpenCode и выберите модель командой `/models`.
 
