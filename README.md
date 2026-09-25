@@ -39,7 +39,7 @@ pnpm run clear
 
 Сайт отдаёт MCP-сервер (Model Context Protocol), через который ИИ-агенты могут искать и читать документацию Hexlet. Эндпоинт:
 
-```
+```text
 https://help.hexlet.io/mcp
 ```
 

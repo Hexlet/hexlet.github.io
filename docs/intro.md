@@ -11,7 +11,8 @@ slug: /
 
 Если вы только начинаете учиться или хотите разобраться в возможностях платформы, начните отсюда — ответы на большинство вопросов уже есть в наших статьях.
 
-## Популярные статьи:
+## Популярные статьи
+
 - [Как устроены курсы в Хекслете](/docs/getting-started/kak-ustroeny-kursy-v-hekslete.md)
 - [Про сертификат](/docs/getting-started/sertifikat/sertifikat.md)
 - [Как сохранить свое решение](/docs/practice/kak-sohranit-svoe-reshenie.md)
