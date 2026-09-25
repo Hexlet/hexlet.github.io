@@ -69,6 +69,10 @@ const config: Config = {
             from: '/learning-formats/tarif-standartnyi',
             to: '/formats-and-tarifs/tarifs/tarif-standartnyi',
           },
+          {
+            from: '/practice-guides/oblachnye-provaidery-dlya-praktik-po-devops',
+            to: '/practice-guides/oblachnye-provaidery',
+          },
         ],
       },
     ],
