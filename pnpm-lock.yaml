@@ -29,6 +29,12 @@ importers:
       '@orama/plugin-docusaurus-v3':
         specifier: ^3.1.18
         version: 3.1.18(@docusaurus/plugin-content-docs@3.10.1(@docusaurus/faster@3.10.1(@docusaurus/types@3.10.1(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)))(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.2.7))(@rspack/core@1.7.11)(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@6.0.3))(@docusaurus/theme-common@3.10.1(@docusaurus/plugin-content-docs@3.10.1(@docusaurus/faster@3.10.1(@docusaurus/types@3.10.1(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)))(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.2.7))(@rspack/core@1.7.11)(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@6.0.3))(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@docusaurus/utils@3.10.1(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@noble/hashes@1.8.0)(@stencil/core@4.30.0)(@types/react@19.2.14)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@orama/stemmers':
+        specifier: ^3.1.18
+        version: 3.1.18
+      '@orama/stopwords':
+        specifier: ^3.1.18
+        version: 3.1.18
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -36,8 +42,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0(@docusaurus/core@3.10.1(@docusaurus/faster@3.10.1(@docusaurus/types@3.10.1(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)))(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.2.7))(@rspack/core@1.7.11)(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(typescript@6.0.3))(@docusaurus/types@3.10.1(@swc/core@1.15.32)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@3.25.76)
       flexsearch:
-        specifier: 0.8.212
-        version: 0.8.212
+        specifier: 0.7.43
+        version: 0.7.43
       hono:
         specifier: ^4.12.27
         version: 4.12.27
@@ -2015,6 +2021,14 @@ packages:
       react: '>=17.0.0 <20.0.0'
       react-dom: '>=17.0.0 <20.0.0'
 
+  '@orama/stemmers@3.1.18':
+    resolution: {integrity: sha512-xXs5fpiUvBs4jJZtnayJmUSomdxxiwwwvTbAzPHSyI6geLM7bxXHgpVlYz4JeMBycHX8bHF7j9m7F35BxhuZ8g==}
+    engines: {node: '>= 20.0.0'}
+
+  '@orama/stopwords@3.1.18':
+    resolution: {integrity: sha512-W8V7m7RnCme+99OmKl/xs5rf6OUhFpr0aPGVmPrXzTLSg4ZqSbRY2euS2S/lgjjYi/0NhEWqwoq8nDY6Ihx4EA==}
+    engines: {node: '>= 20.0.0'}
+
   '@orama/switch@3.1.18':
     resolution: {integrity: sha512-KjAHr/7qiteLWLE284EEA2ZPX9dI3kWi01Ws1paB/oYP1hGijDizqxLuXEC1TwTYvVE07eCMeqho1Ql/rFCasQ==}
     peerDependencies:
@@ -3877,9 +3891,6 @@ packages:
 
   flexsearch@0.7.43:
     resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
-
-  flexsearch@0.8.212:
-    resolution: {integrity: sha512-wSyJr1GUWoOOIISRu+X2IXiOcVfg9qqBRyCPRUdLMIGJqPzMo+jMRlvE83t14v1j0dRMEaBbER/adQjp6Du2pw==}
 
   follow-redirects@1.15.11:
     resolution: {integrity: sha512-deG2P0JfjrTxl50XGCDyfI97ZGVCxIpfKYmfyrQ54n5FO/0gfIES8C/Psl6kWVDolizcaaxZJnTS0QSMxvnsBQ==}
@@ -9833,6 +9844,10 @@ snapshots:
       - '@types/react'
       - babel-plugin-macros
 
+  '@orama/stemmers@3.1.18': {}
+
+  '@orama/stopwords@3.1.18': {}
+
   '@orama/switch@3.1.18(@orama/core@0.1.11)(@orama/orama@3.1.18)(@oramacloud/client@2.1.4)':
     dependencies:
       '@orama/core': 0.1.11
@@ -11921,8 +11936,6 @@ snapshots:
   flat@5.0.2: {}
 
   flexsearch@0.7.43: {}
-
-  flexsearch@0.8.212: {}
 
   follow-redirects@1.15.11: {}
 
