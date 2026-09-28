@@ -19,6 +19,7 @@
     "@cmfcmf/docusaurus-search-local": "^2.0.1",
     "@docusaurus/core": "3.10.1",
     "@docusaurus/faster": "3.10.1",
+    "@docusaurus/plugin-client-redirects": "^3.10.1",
     "@docusaurus/preset-classic": "3.10.1",
     "@mdx-js/react": "^3.1.1",
     "@orama/plugin-docusaurus-v3": "^3.1.18",
@@ -36,9 +37,9 @@
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
-    "npm-check-updates": "^22.2.8",
+    "npm-check-updates": "^22.2.9",
     "typescript": "~6.0.3",
-    "wrangler": "^4.105.0"
+    "wrangler": "^4.110.0"
   },
   "browserslist": {
     "production": [

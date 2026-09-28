@@ -45,6 +45,37 @@ const config: Config = {
         }
       }
     ],
+    [
+      require.resolve('@docusaurus/plugin-client-redirects'),
+      {
+        redirects: [
+          {
+            from: '/learning-formats/bazovyi-plan',
+            to: '/formats-and-tarifs/tarifs/bazovyi-plan',
+          },
+          {
+            from: '/learning-formats/tarif-premialnyi',
+            to: '/formats-and-tarifs/tarifs/tarif-premialnyi',
+          },
+          {
+            from: '/learning-formats/tarif-optimalnyi',
+            to: '/formats-and-tarifs/tarifs/tarif-optimalnyi',
+          },
+          {
+            from: '/learning-formats/tarif-rasshirennyi',
+            to: '/formats-and-tarifs/tarifs/tarif-rasshirennyi',
+          },
+          {
+            from: '/learning-formats/tarif-standartnyi',
+            to: '/formats-and-tarifs/tarifs/tarif-standartnyi',
+          },
+          {
+            from: '/practice-guides/oblachnye-provaidery-dlya-praktik-po-devops',
+            to: '/practice-guides/oblachnye-provaidery',
+          },
+        ],
+      },
+    ],
   ],
 
   storage: {
