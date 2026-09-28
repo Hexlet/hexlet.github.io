@@ -6,7 +6,7 @@ import type {
   SearchProviderInitData,
   SearchResult,
 } from 'docusaurus-plugin-mcp-server';
-import flexsearchConfig from '../flexsearch.config.ts';
+import flexsearchConfig, { WORD_SEPARATOR } from '../flexsearch.config.ts';
 
 type Field = 'title' | 'content' | 'headings' | 'description';
 
@@ -129,7 +129,7 @@ export class HelpSearchProvider implements SearchProvider {
 // rather than the stem — a stem encoded again may lose another suffix.
 function wordsByStem(query: string): Map<string, string> {
   const words = new Map<string, string>();
-  for (const word of query.split(/\s+/)) {
+  for (const word of query.split(WORD_SEPARATOR)) {
     for (const stem of encode(word)) {
       if (!words.has(stem)) words.set(stem, word);
     }

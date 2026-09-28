@@ -4,6 +4,8 @@ import { stopwords } from '@orama/stopwords/russian';
 
 const STOPWORDS = new Set(stopwords);
 
+export const WORD_SEPARATOR = /[\s\-_.,;:!?'"()[\]{}«»—–]+/;
+
 // FlexSearch tuned for Russian content. The plugin's defaults are tuned for
 // English (forward tokenize + bidirectional context + English stemmer) and
 // produce an 80+ MB index on our docs.
@@ -29,7 +31,7 @@ const flexsearchConfig = {
   encode: (str: string) =>
     String(str)
       .toLowerCase()
-      .split(/[\s\-_.,;:!?'"()[\]{}«»—–]+/)
+      .split(WORD_SEPARATOR)
       .filter((word) => word && !STOPWORDS.has(word))
       .map(stemmer),
 } satisfies FlexSearchConfig;
