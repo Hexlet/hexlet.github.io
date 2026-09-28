@@ -1,9 +1,9 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { McpDocsServer } from 'docusaurus-plugin-mcp-server';
+import { McpDocsServer, type ProcessedDoc } from 'docusaurus-plugin-mcp-server';
 import docs from '../build/mcp/docs.json';
 import searchIndex from '../build/mcp/search-index.json';
-import flexsearchConfig from '../flexsearch.config.ts';
+import { HelpSearchProvider } from './search-provider.ts';
 
 const NAME = 'hexlet-help';
 const VERSION = '1.0.0';
@@ -12,17 +12,15 @@ const BASE_URL = 'https://help.hexlet.io';
 let server: McpDocsServer | null = null;
 const getServer = (): McpDocsServer =>
   (server ??= new McpDocsServer({
-    docs: docs as Record<string, unknown>,
+    docs: docs as Record<string, ProcessedDoc>,
     searchIndexData: searchIndex,
     name: NAME,
     version: VERSION,
     baseUrl: BASE_URL,
-    // The built-in 'flexsearch' provider is bundled statically (no dynamic
-    // import), so it works in the Worker. This config must match the one used
-    // at build time in docusaurus.config.ts, or the index deserializes wrong.
-    flexsearch: flexsearchConfig,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } as any));
+    // Reads the index built with flexsearch.config.ts, but ranks articles
+    // that match only some of the query words instead of dropping them.
+    search: new HelpSearchProvider(),
+  }));
 
 const app = new Hono();
 
