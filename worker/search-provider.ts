@@ -8,13 +8,12 @@ import type {
 } from 'docusaurus-plugin-mcp-server';
 import flexsearchConfig, { WORD_SEPARATOR } from '../flexsearch.config.ts';
 
-type Field = 'title' | 'content' | 'headings' | 'description';
-
-const FIELD_WEIGHTS: Record<Field, number> = {
+// In the order the plugin indexes the fields.
+const FIELD_WEIGHTS: Record<string, number> = {
   title: 3,
+  content: 1,
   headings: 2,
   description: 1.5,
-  content: 1,
 };
 
 const SNIPPET_LENGTH = 200;
@@ -24,10 +23,11 @@ const encode = flexsearchConfig.encode;
 // The built-in FlexSearch provider hands the whole query to FlexSearch, which
 // intersects its words: a question asked in full finds nothing unless one
 // article contains every word of it. This provider reads the same index but
-// ranks articles by the words they do contain. The document shape below mirrors the plugin's
-// createSearchIndex, which built the index at build time, and the flexsearch
-// version in package.json must be the one the plugin depends on (0.7):
-// 0.8 reads a 0.7 export without an error and finds nothing.
+// ranks articles by the words they do contain. The document shape below
+// mirrors the plugin's createSearchIndex, which built the index at build time,
+// and the flexsearch version in package.json must be the one the plugin
+// depends on (0.7): 0.8 reads a 0.7 export without an error and finds nothing,
+// so initialize() checks that the index finds an article by its own title.
 export class HelpSearchProvider implements SearchProvider {
   readonly name = 'help-flexsearch';
 
@@ -37,7 +37,7 @@ export class HelpSearchProvider implements SearchProvider {
     ...flexsearchConfig,
     document: {
       id: 'id',
-      index: ['title', 'content', 'headings', 'description'],
+      index: Object.keys(FIELD_WEIGHTS),
       store: ['title', 'description'],
     },
   });
@@ -48,6 +48,10 @@ export class HelpSearchProvider implements SearchProvider {
     }
     for (const [key, value] of Object.entries(initData.indexData)) {
       await this.index.import(key, value as string);
+    }
+    const [first] = Object.values(initData.docs);
+    if (first && this.index.search(first.title).length === 0) {
+      throw new Error('[HelpSearch] The index finds nothing: does flexsearch match the plugin?');
     }
     this.docs = initData.docs;
   }
@@ -60,17 +64,18 @@ export class HelpSearchProvider implements SearchProvider {
     const docs = this.getDocs();
     const limit = options?.limit ?? 16;
     const total = this.getDocCount();
-    const terms = encode(query);
+    const words = wordsByStem(query);
+    const terms = new Set(words.keys());
 
     // Every word is looked up on its own, so an article matching only part of
     // the question still counts. A word found in few articles says more about
     // the question than one found everywhere (IDF), and a word in the title
     // says more than one in the body (field weight).
     const scores = new Map<string, number>();
-    for (const word of wordsByStem(query).values()) {
+    for (const word of words.values()) {
       const weights = new Map<string, number>();
       for (const { field, result } of this.index.search(word, { limit: total })) {
-        const weight = FIELD_WEIGHTS[field as Field];
+        const weight = FIELD_WEIGHTS[field];
         for (const id of result) {
           const docId = String(id);
           weights.set(docId, Math.max(weights.get(docId) ?? 0, weight));
@@ -82,24 +87,24 @@ export class HelpSearchProvider implements SearchProvider {
       }
     }
 
-    const results: SearchResult[] = [];
-    for (const [url, score] of scores) {
-      const doc = docs[url];
-      if (!doc) continue;
-      results.push({
-        url,
-        route: doc.route,
-        title: doc.title,
-        score,
-        snippet: snippet(doc.markdown, terms),
-        matchingHeadings: doc.headings
-          .map((heading) => heading.text)
-          .filter((text) => encode(text).some((stem) => terms.includes(stem)))
-          .slice(0, 3),
+    return [...scores]
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, limit)
+      .flatMap(([url, score]) => {
+        const doc = docs[url];
+        if (!doc) return [];
+        return {
+          url,
+          route: doc.route,
+          title: doc.title,
+          score,
+          snippet: snippet(doc.markdown, terms),
+          matchingHeadings: doc.headings
+            .map((heading) => heading.text)
+            .filter((text) => encode(text).some((stem) => terms.has(stem)))
+            .slice(0, 3),
+        };
       });
-    }
-
-    return results.sort((a, b) => b.score - a.score).slice(0, limit);
   }
 
   async getDocument(url: string): Promise<ProcessedDoc | null> {
@@ -139,9 +144,9 @@ function wordsByStem(query: string): Map<string, string> {
 
 // A stem is the lowercased start of its word (with «ё» read as «е»), so the
 // earliest stem found in the text marks where the article answers the query.
-function snippet(markdown: string, terms: string[]): string {
+function snippet(markdown: string, terms: Set<string>): string {
   const text = markdown.toLowerCase().replaceAll('ё', 'е');
-  const positions = terms.map((term) => text.indexOf(term)).filter((index) => index !== -1);
+  const positions = [...terms].map((term) => text.indexOf(term)).filter((index) => index !== -1);
   const start = positions.length > 0 ? Math.max(0, Math.min(...positions) - 50) : 0;
   const end = Math.min(markdown.length, start + SNIPPET_LENGTH);
   const body = markdown
