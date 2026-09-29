@@ -24,7 +24,7 @@ macOS
 Windows
 
 - Первый вариант: установить [WSL2](https://docs.microsoft.com/ru-ru/windows/wsl/install)
-- Второй вариант: установить [Ubuntu](https://losst.ru/ustanovka-ubuntu-22-04)
+- Второй вариант: установить [Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-desktop)
 
 ## Командная строка
 
