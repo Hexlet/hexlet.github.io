@@ -42,14 +42,21 @@ claude mcp add --transport http hexlet https://mcp.hexlet.io
 
 ### ChatGPT
 
-Добавьте коннектор с адресом `https://mcp.hexlet.io` и войдите в Хекслет в браузере.
+1. Откройте в ChatGPT раздел Plugins, нажмите кнопку с плюсом и выберите Add custom MCP server.
+2. Введите имя `Hexlet`, адрес `https://mcp.hexlet.io` и выберите вход через OAuth.
+3. Подтвердите предупреждение о стороннем сервере и нажмите Create.
+4. Войдите в Хекслет в открывшемся браузере и подтвердите доступ.
 
 ### Codex CLI
+
+Добавьте сервер и войдите в Хекслет двумя командами в терминале.
 
 ```bash
 codex mcp add hexlet --url https://mcp.hexlet.io
 codex mcp login hexlet
 ```
+
+Первая команда записывает сервер в конфиг Codex. Вторая открывает в браузере страницу входа в Хекслет, где нужно подтвердить доступ.
 
 */}
 
